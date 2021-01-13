@@ -1,10 +1,10 @@
 # CMP 307 TayMark Book Meetings Application
-This application is used for managing Ad Hoc meetings withing the TayMark business.
+This is a WPF application used for managing Ad Hoc meetings within the TayMark business. You are able to book a meeting and see meetings you have lined up for the day. This application is an effective representation of my skills with the MVVM design model, LINQ, and the WPF framework.
 
-**Portfolio link**: https://docs.google.com/document/d/164M2t0-7pboDGiTLt_rsLQq0L29Phw5WUqawBN_sjqI/edit?usp=sharing
+**Portfolio link** for this project: https://docs.google.com/document/d/164M2t0-7pboDGiTLt_rsLQq0L29Phw5WUqawBN_sjqI/edit?usp=sharing
 
 # Features
-- Book Meetings
+- Book a Meeting
 - View Daily Agenda
 - View Meeting Notifications
 
@@ -26,3 +26,10 @@ Where to find the exported data
 1. navigate to same directory where app is
 2. will be named: **Meetings_Past_6_Months.csv**
 
+# What I Learned
+- How to implement version control into my workflow
+- How to use the MVVM design model to its full potential
+
+# What can be Improved
+- Once the user enters the application they are greated with a calendar of the day rather than a list
+- 
