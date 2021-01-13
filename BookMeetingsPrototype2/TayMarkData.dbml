@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="sql1803534" Class="TayMarkDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1803534;Persist Security Info=True;User ID=sql1803534" SettingsObjectName="BookMeetingsPrototype2.Properties.Settings" SettingsPropertyName="sql1803534ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="TAYMARK.TayMarkBooking" Member="TayMarkBookings">
+    <Type Name="TayMarkBooking">
+      <Column Name="meetingId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="meetingTitle" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="meetingRoomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="meetingDuration" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="meetingStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="meetingEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TayMarkBooking_TayMarkBooking_Emp" Member="TayMarkBooking_Emps" ThisKey="meetingId" OtherKey="meetingId" Type="TayMarkBooking_Emp" />
+      <Association Name="TayMarkRoom_TayMarkBooking" Member="TayMarkRoom" ThisKey="meetingRoomId" OtherKey="roomId" Type="TayMarkRoom" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="TAYMARK.TayMarkBooking_Emps" Member="TayMarkBooking_Emps">
+    <Type Name="TayMarkBooking_Emp">
+      <Column Name="meetingId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="employeeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TayMarkBooking_TayMarkBooking_Emp" Member="TayMarkBooking" ThisKey="meetingId" OtherKey="meetingId" Type="TayMarkBooking" IsForeignKey="true" />
+      <Association Name="TayMarkEmployee_TayMarkBooking_Emp" Member="TayMarkEmployee" ThisKey="employeeId" OtherKey="empId" Type="TayMarkEmployee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="TAYMARK.TayMarkEmployees" Member="TayMarkEmployees">
+    <Type Name="TayMarkEmployee">
+      <Column Name="empId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Association Name="TayMarkEmployee_TayMarkBooking_Emp" Member="TayMarkBooking_Emps" ThisKey="empId" OtherKey="employeeId" Type="TayMarkBooking_Emp" />
+      <Association Name="TayMarkEmployee_TayMarkAdmin" Member="TayMarkAdmins" ThisKey="empId" OtherKey="empId" Type="TayMarkAdmin" />
+    </Type>
+  </Table>
+  <Table Name="TAYMARK.TayMarkRooms" Member="TayMarkRooms">
+    <Type Name="TayMarkRoom">
+      <Column Name="roomId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="roomName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="roomCapacity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TayMarkRoom_TayMarkBooking" Member="TayMarkBookings" ThisKey="roomId" OtherKey="meetingRoomId" Type="TayMarkBooking" />
+    </Type>
+  </Table>
+  <Table Name="TAYMARK.TayMarkAdmins" Member="TayMarkAdmins">
+    <Type Name="TayMarkAdmin">
+      <Column Name="empId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TayMarkEmployee_TayMarkAdmin" Member="TayMarkEmployee" ThisKey="empId" OtherKey="empId" Type="TayMarkEmployee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="TAYMARK.TayMarkAdminPass" Member="TayMarkAdminPasses">
+    <Type Name="TayMarkAdminPass">
+      <Column Name="password" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

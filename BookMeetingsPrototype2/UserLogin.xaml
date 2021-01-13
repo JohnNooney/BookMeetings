@@ -1,0 +1,30 @@
+﻿<Window x:Class="BookMeetingsPrototype2.UserLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookMeetingsPrototype2"
+        mc:Ignorable="d"
+       Title="login" Height="450" Width="400" Background="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.RowSpan="5" Grid.Column="0" Background="#FFA0BED6" CornerRadius="20" Margin="20"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="Login" FontSize="35" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Separator Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" Margin="30 0 30 0" Background="Black"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="20">
+            <Label Content="ID: " FontWeight="Bold" FontSize="20" VerticalAlignment="Center"/>
+            <TextBox  x:Name="userId" Background="White" FontSize="18" Width="300" Height="50" PreviewTextInput="MaskNumericInput" DataObject.Pasting="MaskNumericPaste" VerticalAlignment="Center" MaxLength="8"/>
+        </StackPanel>
+
+        <Button Grid.Row="3" Grid.Column="0" Name="btnSubmit" Content="Submit" Foreground="Black" Background="White" FontSize="20" Click="BtnSubmit_Click" HorizontalAlignment="Center"/>
+
+    </Grid>
+</Window>

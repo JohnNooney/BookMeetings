@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="BookMeetingsPrototype2.Views.UserControlNotify"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookMeetingsPrototype2.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1010">
+
+    <Grid Background="White" Margin="10 10 0 0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="12" Text="Today's Meetings"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <Separator Grid.ColumnSpan="12"  Height="4" Grid.Row="0" VerticalAlignment="Bottom" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="12">
+            <ItemsControl ItemsSource="{Binding Meetings}" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ListView Margin="0 0 20 0" x:Name="ListBox1">
+                            <DockPanel>
+                                <Border CornerRadius="6" BorderBrush="Gray"  BorderThickness="1" DockPanel.Dock="Top">
+                                    <StackPanel Margin="10">
+                                        <ListViewItem Content="{Binding MeetingTitle}" HorizontalAlignment="Center" FontSize="20"/>
+                                        <Separator/>
+                                        <StackPanel>
+                                            <TextBlock Text="Room: " FontWeight="Bold"/>
+                                            <ListViewItem Content="{Binding RoomName}" FontSize="20"/>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Text="Meeting Start: " FontWeight="Bold"/>
+                                            <ListViewItem Content="{Binding MeetingStart}" FontSize="20"/>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Text="Duration: " FontWeight="Bold"/>
+                                            <ListViewItem Content="{Binding MeetingDuration}" FontSize="20"/>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Text="Leader: " FontWeight="Bold"/>
+                                            <ListViewItem Content="{Binding MeetingLeader}" FontSize="20"/>
+                                        </StackPanel>
+                                        <Button Command="{Binding ViewAllCommand}" FontSize="20">
+                                            <TextBlock Text="View All Participants"/>
+                                        </Button>
+                                    </StackPanel>
+                                </Border>
+                            </DockPanel>
+                        </ListView>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <!--<StackPanel Grid.Column="0" Grid.Row="4">
+            <TextBlock Text="6am"/>
+            <Rectangle Margin="10 0 0 0" Width="1" Height="100" Fill="Black" VerticalAlignment="stretch" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.Row="4">
+            <TextBlock Text="9am"/>
+            <Rectangle  Width="1" Height="100" Fill="Black" VerticalAlignment="stretch" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Column="6" Grid.Row="4">
+            <TextBlock Text="12pm"/>
+            <Rectangle  Width="1" Height="100" Fill="Black" VerticalAlignment="stretch" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Column="6" Grid.Row="4" HorizontalAlignment="left"  Margin="0 0 0 0" >
+            <TextBlock Text=""/>
+            <Rectangle Height="100" Width="90" Fill="green" VerticalAlignment="stretch" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+        <StackPanel Grid.Column="9" Grid.Row="4">
+            <TextBlock Text="3pm"/>
+            <Rectangle  Width="1" Height="100" Fill="Black" VerticalAlignment="stretch" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Column="12" Grid.Row="4" HorizontalAlignment="Right">
+            <TextBlock Text="6pm"/>
+            <Rectangle Margin="0 0 10 0" Width="1" Height="100" Fill="Black" VerticalAlignment="stretch" HorizontalAlignment="Right"/>
+        </StackPanel>-->
+
+
+    </Grid>
+</UserControl>

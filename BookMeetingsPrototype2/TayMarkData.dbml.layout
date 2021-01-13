@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 8.5" name="TayMarkData">
+  <DataContextMoniker Name="/TayMarkDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="963a95b1-c19f-4d0f-ac24-4ec99d87a901" absoluteBounds="3.5, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/TayMarkDataDataContext/TayMarkBooking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca03c511-e58b-4d9d-860f-899e411e4fbf" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="52d25353-7cbb-4cc5-9532-6febdeeec7c8" absoluteBounds="6.25, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/TayMarkDataDataContext/TayMarkBooking_Emp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b8cf520-ad81-4e23-9498-ac6691f6b891" absoluteBounds="6.265, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a69946c2-29af-4656-9e01-7348e923057e" absoluteBounds="3.5, 4.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/TayMarkDataDataContext/TayMarkEmployee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="891a6176-3e37-4661-ac8f-ec6323f1d126" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="88031358-8176-472a-a614-a5a0418ec477" absoluteBounds="0.75, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/TayMarkDataDataContext/TayMarkRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16bef6cd-70ee-4023-a6da-2ecac04c162c" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 1.84699625651042); (6.25 : 1.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TayMarkDataDataContext/TayMarkBooking/TayMarkBooking_TayMarkBooking_Emp" />
+      <nodes>
+        <classShapeMoniker Id="963a95b1-c19f-4d0f-ac24-4ec99d87a901" />
+        <classShapeMoniker Id="52d25353-7cbb-4cc5-9532-6febdeeec7c8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.28125); (6.40625 : 4.28125); (6.40625 : 2.44399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TayMarkDataDataContext/TayMarkEmployee/TayMarkEmployee_TayMarkBooking_Emp" />
+      <nodes>
+        <classShapeMoniker Id="a69946c2-29af-4656-9e01-7348e923057e" />
+        <classShapeMoniker Id="52d25353-7cbb-4cc5-9532-6febdeeec7c8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.94314697265625); (3.5 : 1.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TayMarkDataDataContext/TayMarkRoom/TayMarkRoom_TayMarkBooking" />
+      <nodes>
+        <classShapeMoniker Id="88031358-8176-472a-a614-a5a0418ec477" />
+        <classShapeMoniker Id="963a95b1-c19f-4d0f-ac24-4ec99d87a901" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="10660038-f0f3-43d2-bfde-8b871e65e70d" absoluteBounds="6.625, 4.375, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/TayMarkDataDataContext/TayMarkAdmin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19f6d126-13bd-4000-8843-1d29a987df90" absoluteBounds="6.64, 4.835, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3265357-9035-4f02-8953-de29bb1fd8d4" absoluteBounds="9.5, 4.375, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/TayMarkDataDataContext/TayMarkAdminPass" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3b9f3de-a972-4e88-8c41-41990839be9f" absoluteBounds="9.515, 4.835, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.87584554036458); (6.625 : 4.87584554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TayMarkDataDataContext/TayMarkEmployee/TayMarkEmployee_TayMarkAdmin" />
+      <nodes>
+        <classShapeMoniker Id="a69946c2-29af-4656-9e01-7348e923057e" />
+        <classShapeMoniker Id="10660038-f0f3-43d2-bfde-8b871e65e70d" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
