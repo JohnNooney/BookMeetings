@@ -34,4 +34,5 @@ Where to find the exported data
 
 # What can be Improved
 - Once the user enters the application they are greated with a calendar of the day rather than a list
-- 
+- Email user's as a notification
+- Mobile support
